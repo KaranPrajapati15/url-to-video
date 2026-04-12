@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "functions": {
+    "api/*.py": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/info",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/download",
+      "destination": "/api/index.py"
+    }
+  ]
+}
