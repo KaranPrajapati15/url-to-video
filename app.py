@@ -40,6 +40,11 @@ def get_video_info():
         'quiet': True,
     }
     
+    # Use cookies.txt if it exists to bypass YouTube bot detection on cloud servers
+    cookies_path = os.path.join(os.getcwd(), 'cookies.txt')
+    if os.path.exists(cookies_path):
+        ydl_opts['cookiefile'] = cookies_path
+    
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -66,6 +71,11 @@ def download_video():
         'outtmpl': os.path.join(DOWNLOAD_DIR, '%(id)s.%(ext)s'),
         'noplaylist': True,
     }
+    
+    # Use cookies.txt if it exists to bypass YouTube bot detection on cloud servers
+    cookies_path = os.path.join(os.getcwd(), 'cookies.txt')
+    if os.path.exists(cookies_path):
+        ydl_opts['cookiefile'] = cookies_path
     
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
