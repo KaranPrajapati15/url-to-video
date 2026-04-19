@@ -38,6 +38,10 @@ def get_video_info():
         'format': 'best',
         'noplaylist': True,
         'quiet': True,
+        'source_address': '0.0.0.0',  # Force IPv4
+        'extractor_args': {
+            'youtube': ['player_client=android']  # Trick YouTube into thinking we are an Android mobile device
+        }
     }
     
     # Use cookies.txt if it exists to bypass YouTube bot detection on cloud servers
@@ -70,6 +74,10 @@ def download_video():
         'merge_output_format': 'mp4',
         'outtmpl': os.path.join(DOWNLOAD_DIR, '%(id)s.%(ext)s'),
         'noplaylist': True,
+        'source_address': '0.0.0.0',  # Force IPv4
+        'extractor_args': {
+            'youtube': ['player_client=android']  # Trick YouTube into thinking we are an Android mobile device
+        }
     }
     
     # Use cookies.txt if it exists to bypass YouTube bot detection on cloud servers
