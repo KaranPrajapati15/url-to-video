@@ -1,5 +1,5 @@
 flask
 flask-cors
-yt-dlp
+yt-dlp>=2026.3.17
 static-ffmpeg
 gunicorn
