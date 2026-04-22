@@ -2,3 +2,6 @@ __pycache__/
 downloads/
 *.pyc
 .env
+cookies.txt
+test_extract.py
+export_cookies.py

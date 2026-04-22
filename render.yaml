@@ -1,9 +1,8 @@
 services:
   - type: web
     name: video-downloader
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.0 # Standard version for Render
+      - key: PORT
+        value: 5000
